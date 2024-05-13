@@ -5,6 +5,8 @@ framework:
 
     # Note that the session will be started ONLY if you read or write from it.
     session: true
+    serializer:
+        circular_reference_handler: App\Serializer\CircularReferenceHandler
 
     #esi: true
     #fragments: true
@@ -12,5 +14,10 @@ framework:
 when@test:
     framework:
         test: true
+        timezone: Europe/Paris
         session:
             storage_factory_id: session.storage.factory.mock_file
+
+
+
+
